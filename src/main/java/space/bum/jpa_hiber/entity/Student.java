@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "student_table")
+@Table(name = "student_table", schema = "college")
 public class Student {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
