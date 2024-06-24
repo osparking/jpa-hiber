@@ -2,6 +2,7 @@ package space.bum.jpa_hiber.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,11 +24,12 @@ public class UserController {
   }
 
   @PostMapping
-  public String createUser() {
+  public String createUser(Model model) {
     var user = new User();
     user.setId(currentId++);
     user.setEmail("guest@gmail.com");
     userRepository.save(user);
+    model.addAttribute("users", userRepository.findAll());
     return "home";
   }
 

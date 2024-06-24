@@ -4,14 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <title>학생 레코드 생성</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    tr,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>학생 레코드</h>
+  <h1>학생 레코드</h1>
   <form action="/user" method="post">
     <input type="submit" value="유저 생성">
   </form>
 
+  <div th:if="${not#lists.isEmpty(users)}">
+    <table>
+      <tr>
+        <th>아이디</th>
+      </tr>
+      <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+      </tr>
+      <table>
+  </div>
 </body>
 
 </html>
