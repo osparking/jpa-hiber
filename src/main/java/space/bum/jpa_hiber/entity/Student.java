@@ -1,5 +1,7 @@
 package space.bum.jpa_hiber.entity;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Transient;
 
 import jakarta.persistence.Column;
@@ -8,6 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.Data;
 
 @Data
@@ -23,5 +27,8 @@ public class Student {
 
   @Transient
   private Integer age;
+
+  @Temporal(TemporalType.DATE)
+  private Date birthDate;
 
 }
