@@ -1,5 +1,7 @@
 package space.bum.jpa_hiber.entity;
 
+import org.springframework.data.annotation.Transient;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,4 +20,8 @@ public class Student {
 
   @Column(name = "student_name", length = 50, nullable = false, unique = false)
   private String name;
+
+  @Transient
+  private Integer age;
+
 }
