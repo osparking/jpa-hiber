@@ -2,8 +2,6 @@ package space.bum.jpa_hiber.entity;
 
 import java.util.Date;
 
-import org.springframework.data.annotation.Transient;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -27,8 +25,7 @@ public class Student {
   @Column(name = "student_name", length = 50, nullable = false, unique = false)
   private String name;
 
-  @Transient
-  private Integer age;
+  private transient Integer age;
 
   @Temporal(TemporalType.DATE)
   private Date birthDate;
