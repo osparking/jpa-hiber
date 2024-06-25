@@ -1,5 +1,6 @@
 package space.bum.jpa_hiber.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -11,8 +12,11 @@ public class User3 {
   @Id
   @GeneratedValue
   private Long id;
-  private String firstName = "길동";
-  private Integer age = 25;
-  private Boolean locked = false;
+  @Column(columnDefinition = "varchar(255) default '홍길동'")
+  private String firstName;
+  @Column(columnDefinition = "integer default 25")
+  private Integer age;
+  @Column(columnDefinition = "boolean default false")
+  private Boolean locked;
 
 }
