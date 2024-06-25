@@ -1,6 +1,7 @@
 package space.bum.jpa_hiber.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
@@ -8,6 +9,7 @@ import lombok.Data;
 @Data
 public class User3 {
   @Id
+  @GeneratedValue
   private Long id;
   private String firstName = "길동";
   private Integer age = 25;
