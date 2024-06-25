@@ -40,5 +40,14 @@ class User3Test {
     assertNull(user.getLocked());
   }
 
+  @Test
+  void saveUser_shouldSaveWithDefaultSqlValues() {
+    User3 user = new User3();
+    User3 save = userRepository.save(user);
+
+    assertEquals(save.getFirstName(), "홍길동");
+    assertEquals(save.getAge(), 25);
+    assertFalse(save.getLocked());
+  }
 }
 
