@@ -19,7 +19,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "user")
+@Table
 public class User2 {
   private static Log log = LogFactory.getLog(User2.class);
 
