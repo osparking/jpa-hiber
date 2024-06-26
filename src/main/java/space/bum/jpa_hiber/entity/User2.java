@@ -2,7 +2,6 @@ package space.bum.jpa_hiber.entity;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.validator.constraints.Length;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
@@ -17,6 +16,7 @@ import jakarta.persistence.PreRemove;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @EntityListeners(AuditTrailListener.class)
@@ -33,7 +33,7 @@ public class User2 {
   private String userName;
   private String firstName;
 
-  @Length(min = 1, max = 2)
+  @Size(min = 1, max = 2)
   private String lastName;
   @Transient
   private String fullName;
