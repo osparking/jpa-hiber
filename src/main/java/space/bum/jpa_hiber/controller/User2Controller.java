@@ -27,7 +27,7 @@ public class User2Controller {
     var user2 = new User2();
     user2.setUserName("kim_ms");
     user2.setFirstName("명수");
-    user2.setLastName("김");
+    user2.setLastName("김이박");
     user2Repository.save(user2);
     return "redirect:/home2";
   }

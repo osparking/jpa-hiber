@@ -2,6 +2,7 @@ package space.bum.jpa_hiber.entity;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.validator.constraints.Length;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
@@ -31,6 +32,8 @@ public class User2 {
 
   private String userName;
   private String firstName;
+
+  @Length(min = 1, max = 2)
   private String lastName;
   @Transient
   private String fullName;
