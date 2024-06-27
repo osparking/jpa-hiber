@@ -1,5 +1,6 @@
 package space.bum.jpa_hiber.entity;
 
+import jakarta.persistence.Embedded;
 import lombok.Data;
 
 @Data
@@ -13,9 +14,6 @@ public class Company {
 
   private String phone;
 
-  private String contactFirstName;
-
-  private String contactLastName;
-
-  private String contactPhone;
+  @Embedded
+  private ContactPerson contactPerson;
 }
